@@ -1,6 +1,6 @@
 using System;
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
@@ -33,7 +33,7 @@ public class GameController : MonoBehaviour
 
     public void WinTheGame()
     {
-        StartCoroutine(WinCo());        
+        StartCoroutine(WinCo());
     }
     public void LoseTheGame()
     {
@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour
         endGamePanel.gameObject.SetActive(true);
         endGamePanel.SetupPanel(true, targetWord);
         OnGameFinished?.Invoke(true);
-    } 
+    }
 
     private IEnumerator LoseCo()
     {
@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour
         endGamePanel.gameObject.SetActive(true);
         endGamePanel.SetupPanel(false, targetWord);
         OnGameFinished?.Invoke(false);
-    }    
+    }
 
     public void LoadAnotherLevel()
     {

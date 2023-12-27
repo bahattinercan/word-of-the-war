@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class KeyboardScript : MonoBehaviour
 {
-    public InputField TextField;    
+    public InputField TextField;
     public GameObject RusLayoutSml, RusLayoutBig, EngLayoutSml, EngLayoutBig, SymbLayout;
     public WordController wordController;
     public bool canWrite;
@@ -19,7 +18,7 @@ public class KeyboardScript : MonoBehaviour
 
     public void alphabetFunction(string alphabet)
     {
-        
+
         if (TextField.text.Length < 5)
         {
             if (canWrite)
@@ -42,7 +41,7 @@ public class KeyboardScript : MonoBehaviour
             }
             else
             {
-                if (wordController.HasFinded(word) && wordController.currentColumn!=5)
+                if (wordController.HasFinded(word) && wordController.currentColumn != 5)
                 {
                     wordController.player.NormalAttack();
                 }
@@ -58,7 +57,7 @@ public class KeyboardScript : MonoBehaviour
                 canWrite = false;
                 StartCoroutine(WriteCo());
             }
-            
+
         }
     }
 
@@ -70,13 +69,13 @@ public class KeyboardScript : MonoBehaviour
 
     public void BackSpace()
     {
-        if (TextField.text.Length > 0 )
+        if (TextField.text.Length > 0)
         {
             TextField.text = TextField.text.Remove(TextField.text.Length - 1);
-            if(wordController.currentRow>-1)
+            if (wordController.currentRow > -1)
                 wordController.RemoveTheBox();
         }
-            
+
     }
 
     public void CloseAllLayouts()

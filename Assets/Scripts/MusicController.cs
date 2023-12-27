@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class MusicController : MonoBehaviour
 {
-    [SerializeField]private AudioClip winSound;
-    [SerializeField]private AudioClip loseSound;
+    [SerializeField] private AudioClip winSound;
+    [SerializeField] private AudioClip loseSound;
     private AudioSource audioSource;
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();        
+        audioSource = GetComponent<AudioSource>();
         GameController.instance.OnGameFinished += OnGameFinished;
     }
 

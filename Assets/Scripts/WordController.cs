@@ -5,7 +5,7 @@ public class WordController : MonoBehaviour
 {
     public int currentColumn = 0;
     public int currentRow = 0;
-    public Text[] text0,text1,text2,text3,text4,text5;
+    public Text[] text0, text1, text2, text3, text4, text5;
     public WordLists wordList;
     public Color perfectFindColor, findColor, notFindColor;
     public Player player;
@@ -20,7 +20,7 @@ public class WordController : MonoBehaviour
 
     public void FillTheBoxes(string yazi)
     {
-        currentRow = yazi.Length-1;
+        currentRow = yazi.Length - 1;
         for (int i = 0; i < yazi.Length; i++)
         {
             string myChar = yazi.Substring(i, 1);
@@ -29,7 +29,7 @@ public class WordController : MonoBehaviour
         }
     }
 
-    public void RemoveTheBox() 
+    public void RemoveTheBox()
     {
         Text text = GetText(currentRow, currentColumn);
         text.text = " ";
@@ -42,11 +42,12 @@ public class WordController : MonoBehaviour
         {
             string myChar = yazi.Substring(i, 1);
             string targetChar = wordList.mainWord.Substring(i, 1);
-            if (myChar==targetChar)
+            if (myChar == targetChar)
             {
                 PaintTextBG(i, "perfect");
             }
-            else {
+            else
+            {
                 for (int j = 0; j < wordList.mainWord.Length; j++)
                 {
                     string mainChar = wordList.mainWord.Substring(j, 1);
@@ -60,11 +61,11 @@ public class WordController : MonoBehaviour
                         PaintTextBG(i, "notFind");
                     }
                 }
-            }          
+            }
         }
     }
 
-    private void PaintTextBG(int row,string colorType="notFind")
+    private void PaintTextBG(int row, string colorType = "notFind")
     {
         Color color = new Color(0, 0, 0);
         switch (colorType)
@@ -104,7 +105,7 @@ public class WordController : MonoBehaviour
         return null;
     }
 
-    public bool HasFinded(string yazi) 
+    public bool HasFinded(string yazi)
     {
         for (int i = 0; i < yazi.Length; i++)
         {

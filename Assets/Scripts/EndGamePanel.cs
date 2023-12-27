@@ -1,12 +1,12 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class EndGamePanel : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private TextMeshProUGUI wordText;
 
-    public void SetupPanel(bool isWin,string word)
+    public void SetupPanel(bool isWin, string word)
     {
         if (isWin)
             titleText.text = "Completed!";
